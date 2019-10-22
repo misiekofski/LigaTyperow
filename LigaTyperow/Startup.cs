@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NSwag;
 
 namespace LigaTyperow
 {
@@ -37,8 +38,16 @@ namespace LigaTyperow
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseOpenApi(); // serve OpenAPI/Swagger documents
-            app.UseSwaggerUi3(); // serve Swagger UI
+            app.UseOpenApi(settings =>
+            {
+                settings.PostProcess = (document, request) =>
+                {
+                    document.Info.Title = "Liga Typerów";
+                    document.Info.Version = "0.666 beta";
+                };
+            });
+            
+            app.UseSwaggerUi3(); 
 
             app.UseHttpsRedirection();
 
