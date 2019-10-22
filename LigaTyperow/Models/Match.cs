@@ -4,7 +4,8 @@ namespace LigaTyperow.Models
 {
     public class Match
     {
-        
+        public int MatchId { get; set; }
+
         public Team TeamA { get; set; }
         public Team TeamB { get; set; }
         

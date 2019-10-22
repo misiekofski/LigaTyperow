@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace LigaTyperow.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/matches")]
     [ApiController]
     public class MatchController : ControllerBase
     {

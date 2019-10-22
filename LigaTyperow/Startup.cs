@@ -42,7 +42,7 @@ namespace LigaTyperow
             {
                 settings.PostProcess = (document, request) =>
                 {
-                    document.Info.Title = "Liga Typerów";
+                    document.Info.Title = "API Typerów";
                     document.Info.Version = "0.666 beta";
                 };
             });
