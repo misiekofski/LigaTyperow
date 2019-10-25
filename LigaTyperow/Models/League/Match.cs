@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
-namespace LigaTyperow.Models
+namespace LigaTyperow.Models.League
 {
     public class Match
     {
@@ -11,6 +12,10 @@ namespace LigaTyperow.Models
         
         public int TeamAScore { get; set; }
         public int TeamBScore { get; set; }
+
+        private DateTime ExpirationDate { get; set; }
+
+        private int? GroupId { get; set; }
 
         public List<Footballer> Scorers { get; set; }
     }

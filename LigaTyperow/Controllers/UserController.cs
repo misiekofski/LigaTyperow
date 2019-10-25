@@ -4,24 +4,25 @@ using System.Linq;
 using System.Threading.Tasks;
 using LigaTyperow.Models;
 using LigaTyperow.Models.League;
+using LigaTyperow.Models.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace LigaTyperow.Controllers
 {
-    [Route("api/teams")]
+    [Route("api/users")]
     [ApiController]
-    public class TeamController : ControllerBase
+    public class UserController : ControllerBase
     {
-        private readonly ILogger<MatchController> _logger;
+        private readonly ILogger<UserController> _logger;
 
-        public TeamController(ILogger<MatchController> logger)
+        public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }
 
         [HttpGet]
-        public IEnumerable<Team> Get() => new List<Team>();
+        public IEnumerable<User> Get() => new List<User>();
     }
 }

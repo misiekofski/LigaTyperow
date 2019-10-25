@@ -1,4 +1,4 @@
-﻿namespace LigaTyperow.Models
+﻿namespace LigaTyperow.Models.League
 {
     public class Footballer
     {
