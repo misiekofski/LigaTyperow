@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LigaTyperow.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,9 +15,9 @@ namespace LigaTyperow.Controllers
     [ApiController]
     public class GroupsController : ControllerBase
     {
-        private readonly LTContext _context;
+        private readonly DataContext _context;
 
-        public GroupsController(LTContext context)
+        public GroupsController(DataContext context)
         {
             _context = context;
         }
