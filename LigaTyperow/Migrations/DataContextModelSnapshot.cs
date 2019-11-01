@@ -34,6 +34,9 @@ namespace LigaTyperow.Migrations
                     b.Property<byte[]>("PasswordSalt")
                         .HasColumnType("BLOB");
 
+                    b.Property<int>("UserPoints")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Username")
                         .HasColumnType("TEXT");
 
@@ -57,19 +60,9 @@ namespace LigaTyperow.Migrations
                     b.Property<int>("PointsToGain")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("TeamATeamId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("TeamBTeamId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("BetId");
 
                     b.HasIndex("MatchId");
-
-                    b.HasIndex("TeamATeamId");
-
-                    b.HasIndex("TeamBTeamId");
 
                     b.ToTable("Bets");
                 });
@@ -89,15 +82,10 @@ namespace LigaTyperow.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("MatchId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("TeamId")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("FootballerId");
-
-                    b.HasIndex("MatchId");
 
                     b.HasIndex("TeamId");
 
@@ -109,6 +97,9 @@ namespace LigaTyperow.Migrations
                     b.Property<int>("GroupId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("GroupId");
 
@@ -177,22 +168,10 @@ namespace LigaTyperow.Migrations
                     b.HasOne("LigaTyperow.Models.League.Match", "Match")
                         .WithMany()
                         .HasForeignKey("MatchId");
-
-                    b.HasOne("LigaTyperow.Models.League.Team", "TeamA")
-                        .WithMany()
-                        .HasForeignKey("TeamATeamId");
-
-                    b.HasOne("LigaTyperow.Models.League.Team", "TeamB")
-                        .WithMany()
-                        .HasForeignKey("TeamBTeamId");
                 });
 
             modelBuilder.Entity("LigaTyperow.Models.League.Footballer", b =>
                 {
-                    b.HasOne("LigaTyperow.Models.League.Match", null)
-                        .WithMany("Scorers")
-                        .HasForeignKey("MatchId");
-
                     b.HasOne("LigaTyperow.Models.League.Team", "Team")
                         .WithMany("Players")
                         .HasForeignKey("TeamId")
