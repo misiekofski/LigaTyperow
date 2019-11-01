@@ -16,7 +16,5 @@ namespace LigaTyperow.Models.League
         private DateTime ExpirationDate { get; set; }
 
         private int? GroupId { get; set; }
-
-        public List<Footballer> Scorers { get; set; }
     }
 }

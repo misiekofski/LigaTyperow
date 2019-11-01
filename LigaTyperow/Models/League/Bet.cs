@@ -10,9 +10,6 @@ namespace LigaTyperow.Models.League
 
         public int? MatchId { get; set; }
         public Match Match { get; set; }
-        
-        public Team TeamA { get; set; }
-        public Team TeamB { get; set; }
 
         public int PointsToGain { get; set; }
     }
