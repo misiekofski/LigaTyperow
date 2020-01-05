@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LigaTyperow.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20191101113010_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20200105094140_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,9 @@ namespace LigaTyperow.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
@@ -52,9 +55,6 @@ namespace LigaTyperow.Migrations
                     b.Property<int>("BetId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("TEXT");
 
                     b.Property<int?>("MatchId")
                         .HasColumnType("INTEGER");

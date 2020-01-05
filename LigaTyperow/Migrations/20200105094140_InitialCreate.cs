@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace LigaTyperow.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,6 +29,7 @@ namespace LigaTyperow.Migrations
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     Username = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
                     UserPoints = table.Column<int>(nullable: false)
@@ -123,7 +124,6 @@ namespace LigaTyperow.Migrations
                 {
                     BetId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ExpirationDate = table.Column<DateTime>(nullable: false),
                     MatchId = table.Column<int>(nullable: true),
                     PointsToGain = table.Column<int>(nullable: false)
                 },

@@ -22,6 +22,9 @@ namespace LigaTyperow.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("FirstName")
                         .HasColumnType("TEXT");
 
@@ -50,9 +53,6 @@ namespace LigaTyperow.Migrations
                     b.Property<int>("BetId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("ExpirationDate")
-                        .HasColumnType("TEXT");
 
                     b.Property<int?>("MatchId")
                         .HasColumnType("INTEGER");
